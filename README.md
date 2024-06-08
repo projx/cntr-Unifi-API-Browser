@@ -1,6 +1,8 @@
-# Unifi-API-Browser v2.0.26
+# Container Build for Unifi-API-Browser
 
 Container that runs for unifi browser [https://github.com/Art-of-WiFi/UniFi-API-browser](https://github.com/Art-of-WiFi/UniFi-API-browser). This is based upon the excellent work done by [scyto/docker-UnifiBrowser](https://github.com/scyto/docker-UnifiBrowser).
+
+### Version 2.0.26
 
 I've made some tweaks:
 
@@ -8,6 +10,7 @@ I've made some tweaks:
 * Releases will follow the same name and versioning as UniFi-API-Browser, so it clearer what you are downloading
 * The UniFi-API-Browser is now explicitly stated in the git-clone command ran in the Dockerfile
 
+### Other Notes
 
 Includes support for UniFiOS on UDMP - see note on ports
 
@@ -71,4 +74,7 @@ Editing these files is beyond the scope of this readme.md but both contain good 
 
 ### Feedback
 
-If you find any issues please log them at the github repo https://github.com/scyto/docker-UnifiBrowser
+If you find any issues please log them at the github repo
+
+This Fork Repo: https://github.com/projx/cntr-Unifi-API-Browser/issues
+Original Repo: https://github.com/scyto/docker-UnifiBrowser
