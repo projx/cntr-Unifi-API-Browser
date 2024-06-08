@@ -1,0 +1,13 @@
+# version: '3.8'
+# services:
+#   unifiapibrowser:
+#     ports:
+#     - 8010:8000
+#     environment:
+#       USER: unifi console local account 
+#       PASSWORD: unifi console password
+#       NOAPIBROWSERAUTH: 1 # disables auth to apibrowser
+#       UNIFIURL: https://10.50.1.1
+#       PORT: 443
+#       DISPLAYNAME: Home
+#     image: unifi-browser 

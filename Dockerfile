@@ -1,5 +1,10 @@
+# docker build -t cntr-browser1 .
+
 # Use alpine base image
-FROM alpine:3.14
+FROM alpine:3.20.0
+
+ARG API_BROWSER_TAG=v2.0.25 // Default value provided
+ENV API_TEST=v123
 
 # Copy the current directory contents into the container at /
 COPY /files .
@@ -8,7 +13,8 @@ COPY /files .
 
 RUN apk update \
   && apk add --no-cache php php-session php-curl php-tokenizer composer git \
-  && git clone --depth 1 https://github.com/Art-of-Wifi/UniFi-API-browser.git \
+##  && git clone --depth 1 https://github.com/Art-of-Wifi/UniFi-API-browser.git \
+  && git -c advice.detachedHead=false clone --depth 1 --branch ${API_BROWSER_TAG} https://github.com/Art-of-WiFi/UniFi-API-browser.git  \
   && apk del git \
   && chmod +x start.sh \
   && cd UniFi-API-browser \
@@ -19,7 +25,7 @@ RUN apk update \
 # Define environment variable
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV LANG C.UTF-8
-ENV TZ America/Los_Angeles
+ENV TZ Europe/London
 ENV USER your unifi username
 ENV PASSWORD your unifi password
 ENV UNIFIURL https://192.168.1.1
